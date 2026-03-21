@@ -1,0 +1,194 @@
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 8rem 5rem 5rem;
+  gap: 5rem;
+  position: relative;
+  overflow: hidden;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.bgGlow {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 75% 50%, rgba(255,160,1,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 15% 80%, rgba(255,160,1,0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.text {
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.7s ease both;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 160, 1, 0.1);
+  border: 1px solid rgba(255, 160, 1, 0.25);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  margin-bottom: 1.75rem;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.badge span:last-child {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(3.8rem, 7vw, 7rem);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.sub {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 420px;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+
+.actions {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  flex-wrap: wrap;
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+
+.btnPrimary {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--bg);
+  background: var(--accent);
+  padding: 0.9rem 2.1rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-glow);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.btnPrimary:hover {
+  background: var(--accent-h);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-h);
+}
+
+.btnGhost {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.9rem 1.75rem;
+  border-radius: var(--radius-md);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.btnGhost:hover {
+  color: var(--chalk);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.trust {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  animation: fadeUp 0.7s 0.4s ease both;
+}
+
+.trustCheck {
+  color: var(--send);
+  font-size: 0.9rem;
+}
+
+.visual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 7rem 3rem 4rem;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 6.5rem 1.5rem 4rem;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sub {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .trust {
+    justify-content: center;
+  }
+
+  .visual {
+    display: none;
+  }
+}
