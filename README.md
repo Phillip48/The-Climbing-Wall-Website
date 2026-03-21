@@ -4,7 +4,7 @@
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/Phillip48/climbing-wall-site)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Phillip48/climbing-wall-site/graphs/commit-activity)
 
-[View the live site →](https://climbing-wall-site.vercel.app)
+[View the live site →](https://the-climbing-wall.vercel.app)
 
 ## Table of contents
 
